@@ -21,22 +21,38 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <title>JSP Page</title>
        <link rel="stylesheet" href="css/bootstrap.min.css">
-	 <link rel="stylesheet" href="css/styles.css">
+	 <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/Estilo.css">
 
     </head>
     <body>
         <div id="container">
-	<form  action="modelo.jsp" method="post">
-	<label for="">PRUEBAAAAA</label>
-	<label for="nombre">Nombre: </label>
-	<input type="text" name="nombre" id=""><br>
-	<label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id=""><br>
-        <label for="direccion">Direccion: </label>
-        <label for="direccion">Departamento: </label>
-        
+   <header>
+       <div class="menu_bar">
+         <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+       </div>
+      <nav>
+        <ul>
+          <li><a href="#"><span class="icon-home3"></span>Inicio</a></li>
+          <li><a href="#"><span class="icon-profile"></span>Registrate</a></li>
+          <li><a href="#"><span class="icon-rocket"></span>Proyectos </a></li>
+          <li><a href="#"><span class="icon-envelop"></span>Contáctanos</a></li>
+          <li><a href="#"><span class="icon-search"></span>Buscar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  	<form  action="modelo.jsp" method="post">
+  	<label for="nombre">Nombre: </label>
+  	<input type="text" name="nombre" id=""><br>
+  	<label for="apellido">Apellido</label>
+          <input type="text" name="apellido" id=""><br>
+          <label for="direccion">Direccion: </label>
+          <label for="direccion">Departamento: </label>
+          
        
         <select name="depto" id="depto">
             <option>- No Seleccionado </option>
