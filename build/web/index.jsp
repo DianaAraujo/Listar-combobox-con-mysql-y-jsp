@@ -24,12 +24,12 @@
         <title>JSP Page</title>
        <link rel="stylesheet" href="css/bootstrap.min.css">
 	 <link rel="stylesheet" href="css/styles.css">
-        
+
     </head>
     <body>
         <div id="container">
 	<form  action="modelo.jsp" method="post">
-	
+	<label for="">PRUEBAAAAA</label>
 	<label for="nombre">Nombre: </label>
 	<input type="text" name="nombre" id=""><br>
 	<label for="apellido">Apellido</label>
