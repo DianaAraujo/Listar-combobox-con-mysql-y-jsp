@@ -3,11 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import modelo.Conexion1;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.sql.Connection;
-import modelo.conexion;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -55,6 +54,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write(" ");
+
+             Conexion1 conex = new Conexion1();
+             ResultSet rs = null;
+             
+              
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -62,13 +69,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("       <link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\n");
       out.write("\t <link rel=\"stylesheet\" href=\"css/styles.css\">\n");
-      out.write("         ");
-
-             conexion conex = new conexion();
-              Connection conn = conex.AbrirConexion();
-              Statement st;
-              
-      out.write("\n");
+      out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div id=\"container\">\n");
@@ -81,32 +82,18 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <label for=\"direccion\">Direccion: </label>\n");
       out.write("        <label for=\"direccion\">Departamento: </label>\n");
       out.write("        \n");
-      out.write("        <select>\n");
+      out.write("       \n");
+      out.write("        <select name=\"depto\" id=\"depto\">\n");
       out.write("            <option>- No Seleccionado </option>\n");
       out.write("            ");
 
              try{         
-              String sql="select * from Depto";
-              st = conn.createStatement();
-              ResultSet rs= st.executeQuery(sql);
+              String sql="select * from depto";
+              rs= conex.consultar(sql);
               while(rs.next()){
-               
-      out.write("\n");
-      out.write("               \n");
-      out.write("               <option value=\"");
-rs.getString(1);
-      out.write("\"> ");
-rs.getString(2); 
-      out.write("</option>\n");
-      out.write("                   \n");
-      out.write("                   \n");
-      out.write("                ");
-
-                                       
+                    out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
                  }
-                  conn.close();
-                  st.close();
-                }
+                             }
                 catch(SQLException e){
                   e.printStackTrace();
                 }
@@ -114,7 +101,36 @@ rs.getString(2);
              
       out.write("\n");
       out.write("            \n");
-      out.write("        </select>\n");
+      out.write("        </select> <br>\n");
+      out.write("        <label for=\"Genero\">Género: </label>\n");
+      out.write("        <select name=\"Genero\" id=\"Genero\" >\n");
+      out.write("            <option>No Seleccionado</option>\n");
+      out.write("            <option value=\"F\">F</option>\n");
+      out.write("            <option value=\"M\">M</option>\n");
+      out.write("\n");
+      out.write("        </select> <br><br>\n");
+      out.write("\n");
+      out.write("        <label for=\"Estado civil:\">Estado Civil: </label>\n");
+      out.write("        ");
+
+        try{
+            
+        
+            String sqlCheck= "select * from Ecivil";
+        ResultSet rsCheck= conex.consultar(sqlCheck);
+        while(rsCheck.next()){
+                
+        out.println("<input type='checkbox' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Estado")+"<br>");
+        
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+                
+      out.write("\n");
+      out.write("\n");
       out.write("\t\n");
       out.write("</form>\n");
       out.write("\t</div>\n");

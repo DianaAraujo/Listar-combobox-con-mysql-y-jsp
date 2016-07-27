@@ -4,12 +4,18 @@
     Author     : Evolution
 --%>
 
+<%@page import="modelo.Conexion1"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="modelo.conexion"%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%
+             Conexion1 conex = new Conexion1();
+             ResultSet rs = null;
+             
+              %>
 
 <!DOCTYPE html>
 <html>
@@ -18,11 +24,7 @@
         <title>JSP Page</title>
        <link rel="stylesheet" href="css/bootstrap.min.css">
 	 <link rel="stylesheet" href="css/styles.css">
-         <%
-             conexion conex = new conexion();
-              Connection conn = conex.AbrirConexion();
-              Statement st;
-              %>
+        
     </head>
     <body>
         <div id="container">
@@ -35,32 +37,51 @@
         <label for="direccion">Direccion: </label>
         <label for="direccion">Departamento: </label>
         
-        <select>
+       
+        <select name="depto" id="depto">
             <option>- No Seleccionado </option>
             <%
              try{         
-              String sql="select * from Depto";
-              st = conn.createStatement();
-              ResultSet rs= st.executeQuery(sql);
+              String sql="select * from depto";
+              rs= conex.consultar(sql);
               while(rs.next()){
-               %>
-               
-               <option value="<%rs.getString(1);%>"> <%rs.getString(2); %></option>
-                   
-                   
-                <%
-                                       
+                    out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
                  }
-                  conn.close();
-                  st.close();
-                }
+                             }
                 catch(SQLException e){
                   e.printStackTrace();
                 }
  
              %>
             
-        </select>
+        </select> <br>
+        <label for="Genero">Género: </label>
+        <select name="Genero" id="Genero" >
+            <option>No Seleccionado</option>
+            <option value="F">F</option>
+            <option value="M">M</option>
+
+        </select> <br><br>
+
+        <label for="Estado civil:">Estado Civil: </label><br>
+        <%
+        try{
+            
+        
+            String sqlCheck= "select * from Ecivil";
+        ResultSet rsCheck= conex.consultar(sqlCheck);
+        while(rsCheck.next()){
+                
+        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Estado")+"<br>");
+        
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+                %>
+
 	
 </form>
 	</div>
