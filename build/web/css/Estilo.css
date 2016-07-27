@@ -1,3 +1,4 @@
+/*Menu*/
 * {
 	margin:0;
 	paddig:0;
@@ -5,7 +6,8 @@
 
 
 body{
-	background:#FFFFFA;
+	background:#EAF8FC;
+
 }
 
 header{
@@ -58,7 +60,7 @@ header nav ul li a:hover{
 
 @media screen and (max-width: 833px){
 	header nav {
-		width:80%;
+		width:100%;
 		height: 100%;
 		left: -100%;
 		margin:0;
@@ -96,3 +98,56 @@ header nav ul li a:hover{
 		font-size: 40px;
 	}
 }
+/* Formulario */
+
+
+#formRegistro{
+	margin-top:50px ;
+}
+
+#formPersona{
+	width:450px;
+	margin:auto;
+	background-color: rgba(0,0,0,0.20); 
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	box-sizing:border-box; 
+	margin-top:20px;
+	border-radius: 15px;
+	border-style:4px ;
+
+}
+
+#formPersona h2{
+	text-align: center;
+	margin:0;
+	font-size: 30px;
+	margin-bottom: 20px;
+
+}
+
+.estilo{
+width: 100%;
+margin-bottom:25px ;
+font-size: 20px;
+}
+
+#boton{
+	width:400px;
+	height: 45px;
+}
+#texbox {
+		width:100% ;
+		height:40px;
+	}
+
+/*Responsive formulario*/
+
+@media screen and (max-width: 500px){
+	#formPersona, #boton, #texbox {
+		width:100% ;
+	}
+	
+	}

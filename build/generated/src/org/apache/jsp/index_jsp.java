@@ -72,9 +72,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t <link rel=\"stylesheet\" href=\"css/style.css\">\r\n");
       out.write("   <link rel=\"stylesheet\" href=\"css/Estilo.css\">\r\n");
       out.write("\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div id=\"container\">\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("  <div id=\"container\">\r\n");
+      out.write("\r\n");
       out.write("   <header>\r\n");
       out.write("       <div class=\"menu_bar\">\r\n");
       out.write("         <a href=\"#\" class=\"bt-menu\"><span class=\"icon-menu\"></span>Menu</a>\r\n");
@@ -89,67 +90,70 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </ul>\r\n");
       out.write("      </nav>\r\n");
       out.write("    </header>\r\n");
+      out.write("    \r\n");
+      out.write("  \t<form id=\"formPersona\" action=\"\" method=\"post\"  >\r\n");
+      out.write("      \r\n");
+      out.write("         <div class=\"\"> <h2>Registrate </h2> </div>\r\n");
+      out.write("        \t<div class=\"estilo\"><input type=\"text\" name=\"nombre\" placeholder=\"Nombre\" id=\"\"></div>\r\n");
+      out.write("        \t<div class=\"estilo\"><input type=\"text\" name=\"apellido\" placeholder=\"Apellido\" id=\"\"></div>\r\n");
+      out.write("          <div class=\"estilo\"><input type=\"text\" name=\"e-mail\" placeholder=\"ejemplo@gmail.com\" id=\"\"></div>\r\n");
+      out.write("         <div class=\"estilo\"> <label for=\"direccion\">Ubicación: </label>\r\n");
+      out.write("                  \r\n");
+      out.write("              <select name=\"depto\" id=\"depto\">\r\n");
+      out.write("                <option>- No Seleccionado </option>\r\n");
+      out.write("                ");
+
+                 try{         
+                  String sql="select * from depto";
+                  rs= conex.consultar(sql);
+                  while(rs.next()){
+                        out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
+                     }
+                                 }
+                    catch(SQLException e){
+                      e.printStackTrace();
+                    }
+     
+                 
       out.write("\r\n");
-      out.write("  \t<form  action=\"modelo.jsp\" method=\"post\">\r\n");
-      out.write("  \t<label for=\"nombre\">Nombre: </label>\r\n");
-      out.write("  \t<input type=\"text\" name=\"nombre\" id=\"\"><br>\r\n");
-      out.write("  \t<label for=\"apellido\">Apellido</label>\r\n");
-      out.write("          <input type=\"text\" name=\"apellido\" id=\"\"><br>\r\n");
-      out.write("          <label for=\"direccion\">Direccion: </label>\r\n");
-      out.write("          <label for=\"direccion\">Departamento: </label>\r\n");
-      out.write("          \r\n");
+      out.write("                \r\n");
+      out.write("              </select>  </div>\r\n");
+      out.write("\r\n");
+      out.write("           <div class=\"estilo\">  <label for=\"Genero\">Género: </label>\r\n");
+      out.write("                <select name=\"Genero\" id=\"Genero\" >\r\n");
+      out.write("                    <option>No Seleccionado</option>\r\n");
+      out.write("                    <option value=\"F\">F</option>\r\n");
+      out.write("                    <option value=\"M\">M</option>\r\n");
+      out.write("\r\n");
+      out.write("                </select> <br>\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("          <div class=\"estilo\"><label for=\"Estado civil:\">Estado Civil:</label><br>\r\n");
+      out.write("                    ");
+
+                       try{
+                            
+                        
+                       String sqlCheck= "select * from Ecivil";
+                        ResultSet rsCheck= conex.consultar(sqlCheck);
+                        while(rsCheck.next()){
+                                
+                        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
+                        
+                            }
+                        }
+                        catch(SQLException e){
+                            e.printStackTrace();
+                        }
+                        
+                     
+      out.write("  \r\n");
+      out.write("           </div>\r\n");
+      out.write("\r\n");
+      out.write("\t         <div  class=\"estilo\"><button id=\"boton\">Enviar</button></div>\r\n");
       out.write("       \r\n");
-      out.write("        <select name=\"depto\" id=\"depto\">\r\n");
-      out.write("            <option>- No Seleccionado </option>\r\n");
-      out.write("            ");
-
-             try{         
-              String sql="select * from depto";
-              rs= conex.consultar(sql);
-              while(rs.next()){
-                    out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
-                 }
-                             }
-                catch(SQLException e){
-                  e.printStackTrace();
-                }
- 
-             
-      out.write("\r\n");
-      out.write("            \r\n");
-      out.write("        </select> <br>\r\n");
-      out.write("        <label for=\"Genero\">Género: </label>\r\n");
-      out.write("        <select name=\"Genero\" id=\"Genero\" >\r\n");
-      out.write("            <option>No Seleccionado</option>\r\n");
-      out.write("            <option value=\"F\">F</option>\r\n");
-      out.write("            <option value=\"M\">M</option>\r\n");
-      out.write("\r\n");
-      out.write("        </select> <br><br>\r\n");
-      out.write("\r\n");
-      out.write("        <label for=\"Estado civil:\">Estado Civil: </label><br>\r\n");
-      out.write("        ");
-
-        try{
-            
-        
-            String sqlCheck= "select * from Ecivil";
-        ResultSet rsCheck= conex.consultar(sqlCheck);
-        while(rsCheck.next()){
-                
-        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
-        
-            }
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-        
-                
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\t\r\n");
-      out.write("</form>\r\n");
-      out.write("\t</div>\r\n");
+      out.write("  </form>\r\n");
+      out.write("</div>\r\n");
       out.write("        \r\n");
       out.write("         <script src=\"js/jquery.js\"></script>\r\n");
       out.write("\t <script src=\"js/main.js\"></script>\r\n");

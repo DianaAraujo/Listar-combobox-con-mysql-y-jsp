@@ -27,9 +27,9 @@
 	 <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/Estilo.css">
 
-    </head>
-    <body>
-        <div id="container">
+</head>
+<body>
+  <div class="container">
 
    <header>
        <div class="menu_bar">
@@ -45,64 +45,72 @@
         </ul>
       </nav>
     </header>
-    
-  	<form  action="modelo.jsp" method="post">
-  	<label for="nombre">Nombre: </label>
-  	<input type="text" name="nombre" id=""><br>
-  	<label for="apellido">Apellido</label>
-          <input type="text" name="apellido" id=""><br>
-          <label for="direccion">Direccion: </label>
-          <label for="direccion">Departamento: </label>
-          
-               <select name="depto" id="depto">
-            <option>- No Seleccionado </option>
-            <%
-             try{         
-              String sql="select * from depto";
-              rs= conex.consultar(sql);
-              while(rs.next()){
-                    out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
-                 }
-                             }
-                catch(SQLException e){
-                  e.printStackTrace();
-                }
- 
-             %>
-            
-        </select> <br>
-        <label for="Genero">Género: </label>
-        <select name="Genero" id="Genero" >
-            <option>No Seleccionado</option>
-            <option value="F">F</option>
-            <option value="M">M</option>
-
-        </select> <br><br>
-
-        <label for="Estado civil:">Estado Civil: </label><br>
-        <%
-        try{
-            
-        
-            String sqlCheck= "select * from Ecivil";
-        ResultSet rsCheck= conex.consultar(sqlCheck);
-        while(rsCheck.next()){
+  <section id=formRegistro>  
+  <div id="conte.Form" class=form-group>
+  	<form class="form-group" id="formPersona"  action="" method="post"  >
+      
+         <div id="titulo"> <h2>Registrate </h2> </div>
+        	<div class="estilo"><input type="text" class="form-control" id="texbox" name="nombre" placeholder="Nombre" id=""></div>
+        	<div class="estilo"><input type="text" class="form-control" id="texbox" name="apellido" placeholder="Apellido" id=""></div>
+          <div class="estilo"><input type="text" class="form-control" id="texbox" name="e-mail" placeholder="ejemplo@gmail.com" id=""></div>
+           <!--select departamento --> 
+         <div class="estilo"> <label for="direccion">Ubicación: </label>
+           
+              <select class="form-control" id="sel1" name="depto" id="depto">
+                <option>- No Seleccionado </option>
+                <%
+                 try{         
+                  String sql="select * from depto";
+                  rs= conex.consultar(sql);
+                  while(rs.next()){
+                        out.println("<option value='"+rs.getString("id_depto")+"'>"+rs.getString("dept")+" </option>");      
+                     }
+                                 }
+                    catch(SQLException e){
+                      e.printStackTrace();
+                    }
+     
+                 %>
                 
-        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
-        
-            }
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-        
-                %>
+              </select>  </div>
+           <!--select genero --> 
+           <div class="estilo">  <label for="Genero">Género: </label>
+                <select class="form-control" id="sel1" name="Genero" id="Genero" >
+                    <option>No Seleccionado</option>
+                    <option value="F">F</option>
+                    <option value="M">M</option>
 
-	
-</form>
-	</div>
+                </select> 
+            </div>
+             <!--radio estado civil --> 
+          <div class="estilo"><label for="Estado civil:">Estado Civil:</label><br>
+                    <%
+                       try{
+                            
+                        
+                       String sqlCheck= "select * from Ecivil";
+                        ResultSet rsCheck= conex.consultar(sqlCheck);
+                        while(rsCheck.next()){
+                                
+                        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
+                        
+                            }
+                        }
+                        catch(SQLException e){
+                            e.printStackTrace();
+                        }
+                        
+                     %>  
+           </div>
+
+	         <div  class="estilo"><button id="boton" class="btn btn-primary btn-lg">Enviar</button></div>
+       
+  </form>
+  </div>
+  </section>
+</div>  
         
-         <script src="js/jquery.js"></script>
+   <script src="js/jquery.js"></script>
 	 <script src="js/main.js"></script>
     </body>
 </html>
