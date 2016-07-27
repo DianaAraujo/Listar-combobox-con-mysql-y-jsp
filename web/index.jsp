@@ -30,6 +30,7 @@
     </head>
     <body>
         <div id="container">
+
    <header>
        <div class="menu_bar">
          <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
@@ -44,7 +45,7 @@
         </ul>
       </nav>
     </header>
-
+    
   	<form  action="modelo.jsp" method="post">
   	<label for="nombre">Nombre: </label>
   	<input type="text" name="nombre" id=""><br>
@@ -53,8 +54,7 @@
           <label for="direccion">Direccion: </label>
           <label for="direccion">Departamento: </label>
           
-       
-        <select name="depto" id="depto">
+               <select name="depto" id="depto">
             <option>- No Seleccionado </option>
             <%
              try{         
@@ -88,7 +88,7 @@
         ResultSet rsCheck= conex.consultar(sqlCheck);
         while(rsCheck.next()){
                 
-        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Estado")+"<br>");
+        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
         
             }
         }

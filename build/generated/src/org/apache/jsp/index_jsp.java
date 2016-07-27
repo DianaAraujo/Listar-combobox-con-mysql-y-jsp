@@ -45,46 +45,62 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write(" ");
 
              Conexion1 conex = new Conexion1();
              ResultSet rs = null;
              
               
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("       <link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\n");
-      out.write("\t <link rel=\"stylesheet\" href=\"css/styles.css\">\n");
-      out.write("        \n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div id=\"container\">\n");
-      out.write("\t<form  action=\"modelo.jsp\" method=\"post\">\n");
-      out.write("\t\n");
-      out.write("\t<label for=\"nombre\">Nombre: </label>\n");
-      out.write("\t<input type=\"text\" name=\"nombre\" id=\"\"><br>\n");
-      out.write("\t<label for=\"apellido\">Apellido</label>\n");
-      out.write("        <input type=\"text\" name=\"apellido\" id=\"\"><br>\n");
-      out.write("        <label for=\"direccion\">Direccion: </label>\n");
-      out.write("        <label for=\"direccion\">Departamento: </label>\n");
-      out.write("        \n");
-      out.write("       \n");
-      out.write("        <select name=\"depto\" id=\"depto\">\n");
-      out.write("            <option>- No Seleccionado </option>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("       <link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\r\n");
+      out.write("\t <link rel=\"stylesheet\" href=\"css/style.css\">\r\n");
+      out.write("   <link rel=\"stylesheet\" href=\"css/Estilo.css\">\r\n");
+      out.write("\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div id=\"container\">\r\n");
+      out.write("   <header>\r\n");
+      out.write("       <div class=\"menu_bar\">\r\n");
+      out.write("         <a href=\"#\" class=\"bt-menu\"><span class=\"icon-menu\"></span>Menu</a>\r\n");
+      out.write("       </div>\r\n");
+      out.write("      <nav>\r\n");
+      out.write("        <ul>\r\n");
+      out.write("          <li><a href=\"#\"><span class=\"icon-home3\"></span>Inicio</a></li>\r\n");
+      out.write("          <li><a href=\"#\"><span class=\"icon-profile\"></span>Registrate</a></li>\r\n");
+      out.write("          <li><a href=\"#\"><span class=\"icon-rocket\"></span>Proyectos </a></li>\r\n");
+      out.write("          <li><a href=\"#\"><span class=\"icon-envelop\"></span>Contáctanos</a></li>\r\n");
+      out.write("          <li><a href=\"#\"><span class=\"icon-search\"></span>Buscar</a></li>\r\n");
+      out.write("        </ul>\r\n");
+      out.write("      </nav>\r\n");
+      out.write("    </header>\r\n");
+      out.write("\r\n");
+      out.write("  \t<form  action=\"modelo.jsp\" method=\"post\">\r\n");
+      out.write("  \t<label for=\"nombre\">Nombre: </label>\r\n");
+      out.write("  \t<input type=\"text\" name=\"nombre\" id=\"\"><br>\r\n");
+      out.write("  \t<label for=\"apellido\">Apellido</label>\r\n");
+      out.write("          <input type=\"text\" name=\"apellido\" id=\"\"><br>\r\n");
+      out.write("          <label for=\"direccion\">Direccion: </label>\r\n");
+      out.write("          <label for=\"direccion\">Departamento: </label>\r\n");
+      out.write("          \r\n");
+      out.write("       \r\n");
+      out.write("        <select name=\"depto\" id=\"depto\">\r\n");
+      out.write("            <option>- No Seleccionado </option>\r\n");
       out.write("            ");
 
              try{         
@@ -99,18 +115,18 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
                 }
  
              
-      out.write("\n");
-      out.write("            \n");
-      out.write("        </select> <br>\n");
-      out.write("        <label for=\"Genero\">Género: </label>\n");
-      out.write("        <select name=\"Genero\" id=\"Genero\" >\n");
-      out.write("            <option>No Seleccionado</option>\n");
-      out.write("            <option value=\"F\">F</option>\n");
-      out.write("            <option value=\"M\">M</option>\n");
-      out.write("\n");
-      out.write("        </select> <br><br>\n");
-      out.write("\n");
-      out.write("        <label for=\"Estado civil:\">Estado Civil: </label>\n");
+      out.write("\r\n");
+      out.write("            \r\n");
+      out.write("        </select> <br>\r\n");
+      out.write("        <label for=\"Genero\">Género: </label>\r\n");
+      out.write("        <select name=\"Genero\" id=\"Genero\" >\r\n");
+      out.write("            <option>No Seleccionado</option>\r\n");
+      out.write("            <option value=\"F\">F</option>\r\n");
+      out.write("            <option value=\"M\">M</option>\r\n");
+      out.write("\r\n");
+      out.write("        </select> <br><br>\r\n");
+      out.write("\r\n");
+      out.write("        <label for=\"Estado civil:\">Estado Civil: </label><br>\r\n");
       out.write("        ");
 
         try{
@@ -120,7 +136,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         ResultSet rsCheck= conex.consultar(sqlCheck);
         while(rsCheck.next()){
                 
-        out.println("<input type='checkbox' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Estado")+"<br>");
+        out.println("<input type='radio' name='Ecivil' value='"+rsCheck.getString("id_Ecivil")+"'> "+rsCheck.getString("Ecivil")+"<br>");
         
             }
         }
@@ -129,16 +145,16 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         
                 
-      out.write("\n");
-      out.write("\n");
-      out.write("\t\n");
-      out.write("</form>\n");
-      out.write("\t</div>\n");
-      out.write("        \n");
-      out.write("         <script src=\"js/jquery.js\"></script>\n");
-      out.write("\t <script src=\"js/main.js\"></script>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\r\n");
+      out.write("</form>\r\n");
+      out.write("\t</div>\r\n");
+      out.write("        \r\n");
+      out.write("         <script src=\"js/jquery.js\"></script>\r\n");
+      out.write("\t <script src=\"js/main.js\"></script>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

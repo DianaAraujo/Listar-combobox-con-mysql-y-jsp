@@ -13,10 +13,14 @@ header{
 }
 
 header nav {
-	width:90%;
-	max-width: 1000px;
+	width:95%;
+	max-width: 870px;
 	margin: 20px auto;
-	background: #024959;
+	background:#0A0000 ;
+/*#021D53*/
+	/*#024959*/
+	
+	
 
 }
 
@@ -27,15 +31,17 @@ header nav {
 header nav ul{
 	overflow: hidden;
 	list-style: none;
+	
 }
 
 header nav ul li{
 	float: left;
+	font-size: 20px;
 }
 
 header nav ul li a{
 	color:#fff;
-	padding: 20px;
+	padding: 20px; 
 	display:block;
 	text-decoration: none;
 }
@@ -45,12 +51,12 @@ header nav ul li span{
 }
 
 header nav ul li a:hover{
-	background: #037E8C;
+	background: #0BC50B;
 	color:#FFF;
 }
 
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 833px){
 	header nav {
 		width:80%;
 		height: 100%;
@@ -75,7 +81,7 @@ header nav ul li a:hover{
 	.menu_bar .bt-menu {
 		display: block;
 		padding: 20px;
-		background: #024959;
+		background: #0A0000;
 		color:#fff;
 		text-decoration: none;
 		font-weight:bold;
