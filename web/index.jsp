@@ -45,11 +45,29 @@
         </ul>
       </nav>
     </header>
+
+    <section id="mostrar_registros">
+
+    
+    <div id="Agregar">
+    <buttom id="AgregarRegistro" class="btn btn-success btn-lg"> Agregar Registro</buttom><br><br>
+    <input type="text" class="form-control" name="filtro">
+
+    </div>
+
+    <div id="mostrar_registros"></div>
+      
+
+    </section>
+<div id="agregarRegistro">
+ <div id="fondo-Modal" class=""> </div>
+
   <section id=formRegistro>  
-  <div id="conte.Form" class=form-group>
+ 
   	<form class="form-group" id="formPersona"  action="" method="post"  >
       
-         <div id="titulo"> <h2>Registrate </h2> </div>
+         <div id="titulo"> <h2>Registrate </h2> <span id="cerra-modal" class="icon-cross"></span> </div>
+
         	<div class="estilo"><input type="text" class="form-control" id="texbox" name="nombre" placeholder="Nombre" id=""></div>
         	<div class="estilo"><input type="text" class="form-control" id="texbox" name="apellido" placeholder="Apellido" id=""></div>
           <div class="estilo"><input type="text" class="form-control" id="texbox" name="e-mail" placeholder="ejemplo@gmail.com" id=""></div>
@@ -106,8 +124,10 @@
 	         <div  class="estilo"><button id="boton" class="btn btn-primary btn-lg">Enviar</button></div>
        
   </form>
-  </div>
+  
   </section>
+  </div>
+ 
 </div>  
         
    <script src="js/jquery.js"></script>

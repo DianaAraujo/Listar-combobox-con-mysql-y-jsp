@@ -18,3 +18,11 @@ function main(){
 
 	});
 };
+
+$('#AgregarRegistro').on("click",function(){
+ 	$('#agregarRegistro').show();
+});
+
+$('#cerra-modal').on("click",function(){
+ 	$('#agregarRegistro').hide();
+});
